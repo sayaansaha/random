@@ -1,11 +1,20 @@
+
 public class Solution {
 	public int[] maxSubArray(int[] nums){
-		midPoint = (nums.length+1)/2;
+		int maxSoFar;
+		int maxEndingHere= 0;
 
-		if(nums.length == 0 || nums.length()==1){
-			return nums[0];
+		for(int i = 0; i < nums.length(); i++){
+			maxEndingHere = maxEndingHere + nums[i];
+			if(maxEndingHere < 0){
+				maxEndingHere = 0;
+				if(maxEndingHere > maxSoFar){
+					maxSoFar = maxEndingHere;
+				}
+			}
+			return maxSoFar;
 		}
 
-		else 
-	}
+
+		}
 }
